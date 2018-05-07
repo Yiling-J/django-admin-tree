@@ -1,0 +1,33 @@
+{% if result_hidden_fields %}
+<div class="hiddenfields">{# DIV for HTML validation #}
+{% for item in result_hidden_fields %}{{ item }}{% endfor %}
+</div>
+{% endif %}
+{% if results %}
+<div class="row">
+
+<div class="results">
+                <div class="dd" id='nestable1'>
+                    <ol class="dd-list">
+                        {% for result in results %}
+                        {% if result.form.non_field_errors %}
+                            <tr><td colspan="{{ result|length }}">{{ result.form.non_field_errors }}</td></tr>
+                        {% endif %}
+                        <tr class="{% cycle 'row1' 'row2' %}">{% for item in result %}{{ item }}{% endfor %}</tr>
+                        {% endfor %}
+                    </ol>
+                </div>
+</div>
+
+<div class='nodes'>
+    <div class="dd" id='nestable2'>
+        <ol class="dd-list">
+            {% for node in nodes %}
+            {{node}}
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+{% endif %}
+
+</div>

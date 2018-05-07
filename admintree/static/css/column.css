@@ -1,0 +1,37 @@
+.results {
+    float: left;
+    width: 65%;
+    overflow-y: scroll;
+    height: 700px;
+}
+
+.nodes {
+    float: left;
+    width: 35%;
+    overflow-y: scroll;
+    height: 700px;
+}
+
+.dd-handle.node {
+    background: lightgoldenrodyellow;
+}
+
+.default.save{
+    float: right;
+    border: 2px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.checkbox {
+    position: relative;
+    float: left;
+    margin: 5px ! important;
+    background: none ! important;
+    border: none ! important;
+}
